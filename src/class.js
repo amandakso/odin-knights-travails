@@ -20,11 +20,22 @@ class Gameboard {
         this.limit = num;
     }
     checkMove(arr) {
+        // check that arrays are valid length 
         if (arr.length != 2) {
             return false;
         }
+        // check that integer values are given
         let x = arr[0];
-        let y = arr[1];
-
+        let y = arr[1]
+        if (!Number.isInteger(x) || !Number.isInteger(y)) {
+            return false;
+        }
+        let limit = this.limit - 1;
+        if (x > limit || y > limit) {
+            return false;
+        }
+        return true;
     }
 }
+
+export { Knight, Gameboard }
