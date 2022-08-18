@@ -31,7 +31,7 @@ class Gameboard {
             return false;
         }
         let limit = this.limit - 1;
-        if (x > limit || y > limit) {
+        if (x > limit || y > limit || x < 0 || y < 0) {
             return false;
         }
         return true;
